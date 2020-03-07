@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>路由器配置页面(Router Configuration Page)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.min.js"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+
+    /* Sticky footer styles
+    -------------------------------------------------- */
+
+    html,
+    body {
+          height: 100%;
+          /* The html and body elements cannot have any padding or margin. */
+        }
+
+        /* Wrapper for page content to push down footer */
+        #wrap {
+          min-height: 100%;
+          height: auto !important;
+          height: 100%;
+          /* Negative indent footer by it's height */
+          margin: 0 auto -60px;
+        }
+
+        /* Set the fixed height of the footer here */
+        #push,
+        #footer {
+          height: 60px;
+        }
+        #footer {
+          background-color: #f5f5f5;
+        }
+
+        /* Lastly, apply responsive CSS fixes as necessary */
+        @media (max-width: 767px) {
+          #footer {
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
+
+        #clockdiv{
+	         font-family: sans-serif;
+	         color: #fff;
+	         display: inline-block;
+	         font-weight: 100;
+	         text-align: center;
+	         font-size: 30px;
+         }
+
+        #clockdiv > div{
+           padding: 10px;
+           border-radius: 3px;
+	         background: #00BF96;
+	         display: inline-block;
+         }
+
+        #clockdiv div > span{
+          padding: 15px;
+	        border-radius: 3px;
+	        background: #00816A;
+	        display: inline-block;
+        }
+
+      .smalltext{
+	       padding-top: 5px;
+	       font-size: 16px;
+       }
+
+  </style>
+</head>
+<body>
+
+  <!-- Start navigation bar -->
+  <nav class="navbar navbar-inverse" style="background:RoyalBlue;margin-top:2em;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--
+        <a class="navbar-brand"><img style="background:transparent" src="Your LOGO" alt="Logo"></a>
+        -->
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">设定(Setup)<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">基本设定(Basic Setup)</a></li>
+              <li><a href="#">域名分析(DDNS)</a></li>
+              <li><a href="#">MAC地址克隆(MAC Address Clone)</a></li>
+              <li><a href="#">高级路由(Advanced Routing)</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">无线(Wireless)<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">基本无线设置(Basic Wireless Settings)</a></li>
+              <li><a href="#">无线网络安全(Wireless Security)</a></li>
+              <li><a href="#">无线MAC过滤器(Wireless MAC Filter)</a></li>
+              <li><a href="#">高级无线设置(dvanced Wireless Settings)</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">安全(Security)<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">防火墙(FirewallFirewall)</a></li>
+              <li><a href="#">虚拟专用网(VPN)</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">存取限制(Access Restriction)<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">互连网(Internet Access)</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">管理(Administration)<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">管理(Management)</a></li>
+              <li><a href="#">记录(Log)</a></li>
+              <li><a href="#">诊断程序(Diagnostics)</a></li>
+              <li><a href="#">出厂默认值(Factory Defaults)</a></li>
+              <li><a href="#">配置管理(Config Manegements)</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
+              data-toggle="dropdown" href="#" style="color:white">状态(Status)<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">路由器(Router)</a></li>
+              <li><a href="#">本地网络(Local Network)</a></li>
+              <li><a href="#">无线(Wireless)</a></li>
+              <li><a href="#">高级路由(Advanced Routing)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End navigation bar -->
+
+  <!-- Start firt phase -->
+  <div class="container">
+    <div>
+      <h2 class="text-center" style="color:CornflowerBlue">正在进行固件升级(Firmware Upgrade In Progress)</h2>
+      <p class="lead">该更新当前正在上传到路由器。请不要在更新路由器时断开或关闭路由器。(The update is currently being uploaded to the router.
+                      Please do not disconnect or turn off the router while it's
+                      being updated.)</p>
+    </div>
+
+    <!-- Start porgress bar -->
+    <div id="instance" class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+        <span class="sr-only">0% 完成(Complete)</span>
+      </div>
+    </div>
+    <!-- End porgress bar -->
+
+    <div id="push"></div>
+  </div>
+<!-- End first phase -->
+
+<!-- Start second phase -->
+  <div class="container show-on-done hidden">
+    <div class="row content">
+      <div class="col-sm">
+        <div>
+          <p class="lead">更新成功，当前正在安装。路由器正在重新启动，您将无法访问互联网。在连接回路由器之前，请让计时器过期。(The update was successful and currently it's being installed.
+                          The router is being rebooted and you will lose access to
+                          the internet. Please allow the timer to expire before
+                          you connect back to the router.)</p>
+        </div>
+      </div>
+
+      <!-- start of the countdown -->
+      <div class="col-sm text-center">
+        <div id="clockdiv">
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">分钟(Minutes)</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">秒(Seconds)</div>
+          </div>
+        </div>
+      </div>
+      <!-- end of the countdown -->
+
+    </div>
+    <div id="push"></div>
+  </div>
+  <!-- End second phase -->
+
+  <!-- Start footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="text-muted">©  2019, All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Start upgrade first message -->
+  <div class="modal fade" id="upgrade-only" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">信息(Information)</h4>
+        </div>
+        <div class="modal-body">
+          <p>请等待更新完成。(Please Wait For Update To Finish.)</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭(Close)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End upgrade first message -->
+
+<script>
+/*
+  Increases the progress bar
+*/
+function fakeProgress(container, durationInMs, onDone) {
+    var intervalInMS = 200;
+    var doneDelay = intervalInMS * 2;
+    var bar = container.find('.progress-bar');
+    var srOnly = bar.find('.sr-only');
+    var percent = 0;
+
+    var interval = setInterval(function updateBar() {
+        percent += 100 * (intervalInMS/durationInMs);
+        bar.css({width: percent + '%'});
+        bar['aria-valuenow'] = percent;
+        srOnly.text(percent + '% Complete');
+
+        if (percent >= 100) {
+            clearInterval(interval);
+            setTimeout(function() {
+                if (typeof onDone === 'function') {
+                    onDone();
+                }
+            }, doneDelay);
+        }
+    }, intervalInMS);
+}
+
+/*
+  Used to show content after the progress bar is done
+*/
+function onDone() {
+    $('.show-on-done').removeClass('hidden');
+
+    var deadline = new Date(Date.parse(new Date()) + 5 * 60 * 1000);
+    initializeClock('clockdiv', deadline);
+}
+
+/*
+  Calculates the remaning time
+*/
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+
+  return {
+    'total': t,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+/*
+  Creates the clock related content
+*/
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  // updating the countdown
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+// speed of the progress bar in milliseconds
+var duration = 100000;
+
+// start the progress bar
+fakeProgress($('#instance'), duration, onDone);
+
+// update copyright year
+var theDate=new Date(); 
+document.getElementsByClassName("text-muted")[0].innerHTML = "©  " + theDate.getFullYear() + ", All Rights Reserved.";
+
+</script>
+</body>
+</html>
