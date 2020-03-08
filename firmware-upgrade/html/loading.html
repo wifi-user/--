@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>路由器配置页面(Router Configuration Page)</title>
+  <title>路由器配置页面</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/bootstrap.min.css">
@@ -96,53 +96,53 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
-              data-toggle="dropdown" href="#" style="color:white">设定(Setup)<span class="caret"></span></a>
+              data-toggle="dropdown" href="#" style="color:white">设定<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">基本设定(Basic Setup)</a></li>
-              <li><a href="#">域名分析(DDNS)</a></li>
-              <li><a href="#">MAC地址克隆(MAC Address Clone)</a></li>
-              <li><a href="#">高级路由(Advanced Routing)</a></li>
+              <li><a href="#">基本设定</a></li>
+              <li><a href="#">域名分析</a></li>
+              <li><a href="#">MAC地址克隆</a></li>
+              <li><a href="#">高级路由</a></li>
             </ul>
           </li>
           <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
-              data-toggle="dropdown" href="#" style="color:white">无线(Wireless)<span class="caret"></span></a>
+              data-toggle="dropdown" href="#" style="color:white">无线<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">基本无线设置(Basic Wireless Settings)</a></li>
-              <li><a href="#">无线网络安全(Wireless Security)</a></li>
-              <li><a href="#">无线MAC过滤器(Wireless MAC Filter)</a></li>
-              <li><a href="#">高级无线设置(dvanced Wireless Settings)</a></li>
+              <li><a href="#">基本无线设置</a></li>
+              <li><a href="#">无线网络安全</a></li>
+              <li><a href="#">无线MAC过滤器</a></li>
+              <li><a href="#">高级无线设置</a></li>
             </ul>
           </li>
           <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
-              data-toggle="dropdown" href="#" style="color:white">安全(Security) <span class="caret"></span></a>
+              data-toggle="dropdown" href="#" style="color:white">安全<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">防火墙(FirewallFirewall)</a></li>
-              <li><a href="#">虚拟专用网(VPN)</a></li>
+              <li><a href="#">防火墙</a></li>
+              <li><a href="#">虚拟专用网</a></li>
             </ul>
           </li>
           <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
-              data-toggle="dropdown" href="#" style="color:white">存取限制(Access Restriction)<span class="caret"></span></a>
+              data-toggle="dropdown" href="#" style="color:white">存取限制<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">互连网(Internet Access)</a></li>
+              <li><a href="#">互连网</a></li>
             </ul>
           </li>
           <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
-              data-toggle="dropdown" href="#" style="color:white">管理(Administration)<span class="caret"></span></a>
+              data-toggle="dropdown" href="#" style="color:white">管理<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">管理(Management)</a></li>
-              <li><a href="#">记录(Log)</a></li>
-              <li><a href="#">诊断程序(Diagnostics)</a></li>
-              <li><a href="#">出厂默认值(Factory Defaults)</a></li>
-              <li><a href="#">配置管理(Config Manegements)</a></li>
+              <li><a href="#">管理</a></li>
+              <li><a href="#">日志</a></li>
+              <li><a href="#">诊断程序</a></li>
+              <li><a href="#">出厂默认值</a></li>
+              <li><a href="#">配置管理</a></li>
             </ul>
           </li>
           <li class="dropdown" data-toggle="modal" data-target="#upgrade-only"><a class="dropdown-toggle"
               data-toggle="dropdown" href="#" style="color:white">状态(Status)<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">路由器(Router)</a></li>
-              <li><a href="#">本地网络(Local Network)</a></li>
-              <li><a href="#">无线(Wireless)</a></li>
-              <li><a href="#">高级路由(Advanced Routing)</a></li>
+              <li><a href="#">路由器</a></li>
+              <li><a href="#">本地网络</a></li>
+              <li><a href="#">无线</a></li>
+              <li><a href="#">高级路由</a></li>
             </ul>
           </li>
         </ul>
@@ -154,16 +154,14 @@
   <!-- Start firt phase -->
   <div class="container">
     <div>
-      <h2 class="text-center" style="color:CornflowerBlue">正在进行固件升级(Firmware Upgrade In Progress)</h2>
-      <p class="lead">该更新当前正在上传到路由器。请不要在更新路由器时断开或关闭路由器。(The update is currently being uploaded to the router.
-                      Please do not disconnect or turn off the router while it's
-                      being updated.)</p>
+      <h2 class="text-center" style="color:CornflowerBlue">正在进行固件升级</h2>
+      <p class="lead">该更新当前正在上传到路由器。请不要在更新路由器时断开或关闭路由器。</p>
     </div>
 
     <!-- Start porgress bar -->
     <div id="instance" class="progress">
       <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-        <span class="sr-only">0% 完成(Complete)</span>
+        <span class="sr-only">0% 完成</span>
       </div>
     </div>
     <!-- End porgress bar -->
@@ -177,10 +175,7 @@
     <div class="row content">
       <div class="col-sm">
         <div>
-          <p class="lead">更新成功，当前正在安装。路由器正在重新启动，您将无法访问互联网。在连接回路由器之前，请让计时器过期。(The update was successful and currently it's being installed.
-                          The router is being rebooted and you will lose access to
-                          the internet. Please allow the timer to expire before
-                          you connect back to the router.)</p>
+          <p class="lead">更新成功，当前正在安装。路由器正在重新启动，您将无法访问互联网。在连接回路由器之前，请让计时器过期。</p>
         </div>
       </div>
 
@@ -189,11 +184,11 @@
         <div id="clockdiv">
           <div>
             <span class="minutes"></span>
-            <div class="smalltext">分钟(Minutes)</div>
+            <div class="smalltext">分钟</div>
           </div>
           <div>
             <span class="seconds"></span>
-            <div class="smalltext">秒(Seconds)</div>
+            <div class="smalltext">秒</div>
           </div>
         </div>
       </div>
@@ -218,13 +213,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">信息(Information)</h4>
+          <h4 class="modal-title">信息</h4>
         </div>
         <div class="modal-body">
-          <p>请等待更新完成。(Please Wait For Update To Finish.)</p>
+          <p>请等待更新完成</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭(Close)</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
         </div>
       </div>
     </div>
